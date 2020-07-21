@@ -4,7 +4,7 @@
   "publisher": "asbjornh",
   "icon": "icon.png",
   "version": "1.0.0",
-  "description": "A VSCode extension for better renaming React components",
+  "description": "Better renaming of React components",
   "scripts": {
     "vscode:prepublish": "webpack",
     "build": "webpack"
