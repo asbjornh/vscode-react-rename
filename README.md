@@ -6,7 +6,7 @@ A VSCode extension for better renaming of React components. Renames folder, file
 
 ## How to use
 
-- Right-click a folder or a component file in the file explorer and select `Rename React Component towards the bottom of the context menu
+- Right-click a folder or a component file in the file explorer and select `Rename React Component` towards the bottom of the context menu
 - Run (`Rename React Component`) in the command palette. This will rename the currently open React component.
 
 If the component has a folder with the same name as the component file, both will be renamed. If there are style sheets with the same name as the selected component, those files will be renamed.
