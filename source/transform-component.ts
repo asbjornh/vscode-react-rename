@@ -1,3 +1,5 @@
+import path from "path";
+import resolveFrom from "resolve-from";
 import generate from "@babel/generator";
 import traverse from "@babel/traverse";
 import { parse } from "@babel/parser";
@@ -44,5 +46,13 @@ export default async function transformComponent(
     },
   });
   const newSource = generate(ast).code;
-  await writeFile(filePath, newSource);
+
+  try {
+    const prettierPath = resolveFrom(path.dirname(filePath), "prettier");
+    const prettier = require(prettierPath);
+    const config = await prettier.resolveConfig(filePath);
+    await writeFile(filePath, prettier.format(newSource, config));
+  } catch {
+    await writeFile(filePath, newSource);
+  }
 }

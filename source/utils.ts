@@ -1,4 +1,6 @@
 import { window, workspace, Uri } from "vscode";
+
+import * as fs from "fs";
 import * as path from "path";
 import { paramCase, camelCase, pascalCase, snakeCase } from "change-case";
 

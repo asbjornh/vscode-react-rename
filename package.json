@@ -1,6 +1,6 @@
 {
   "name": "vscode-react-rename",
-  "displayName": "React rename",
+  "displayName": "React Rename",
   "publisher": "asbjornh",
   "icon": "icon.png",
   "version": "1.0.0",
@@ -14,7 +14,8 @@
     "@babel/parser": "^7.10.5",
     "@babel/traverse": "^7.10.5",
     "@types/babel__traverse": "^7.0.13",
-    "change-case": "^4.1.1"
+    "change-case": "^4.1.1",
+    "resolve-from": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^13.1.6",

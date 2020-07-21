@@ -15,6 +15,8 @@ export const renameComponent = (uri: Uri) => {
     : renameFromFile(uri.fsPath, config);
 };
 
+const getName = () => prompt("New component file name");
+
 const findStyleFiles = (folderPath, name) =>
   [".scss", ".less", ".sass", ".css"]
     .map(ext => path.join(folderPath, name + ext))
@@ -31,8 +33,7 @@ const renameFromFolder = async (folderPath: string, config: Config) => {
     window.showErrorMessage(`Found no component file named '${name}'`);
   }
 
-  const newName = await prompt("New component name");
-
+  const newName = await getName();
   if (!newName) return;
 
   await Promise.all(
@@ -61,8 +62,7 @@ const renameFromFile = async (filePath: string, config: Config) => {
     return;
   }
 
-  const newName = await prompt("New component name");
-
+  const newName = await getName();
   if (!newName) return;
 
   await transformComponent(filePath, name, newName, config);
