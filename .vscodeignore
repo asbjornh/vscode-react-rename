@@ -1,0 +1,9 @@
+.vscode/**
+source/**
+.gitignore
+.prettierignore
+screencap.gif
+tsconfig.json
+webpack.config.js
+yarn.lock
+node_modules
