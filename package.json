@@ -1,0 +1,86 @@
+{
+  "name": "vscode-react-rename",
+  "displayName": "React rename",
+  "publisher": "asbjornh",
+  "icon": "icon.png",
+  "version": "1.0.0",
+  "description": "A VSCode extension for better renaming React components",
+  "scripts": {
+    "vscode:prepublish": "webpack",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.10.5",
+    "@babel/parser": "^7.10.5",
+    "@babel/traverse": "^7.10.5",
+    "@types/babel__traverse": "^7.0.13",
+    "change-case": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.6",
+    "@types/vscode": "^1.41.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asbjornh/vscode-react-rename.git"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "react",
+    "component",
+    "rename"
+  ],
+  "author": "Asbjørn Hegdahl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asbjornh/vscode-react-rename/issues"
+  },
+  "homepage": "https://github.com/asbjornh/vscode-react-rename#readme",
+  "engines": {
+    "vscode": "^1.41.1"
+  },
+  "main": "dist/extension.js",
+  "activationEvents": [
+    "onCommand:extension.rename"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.rename",
+        "title": "Rename React Component"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.rename",
+          "group": "7_modification",
+          "when": "resourceFilename =~ /^[^.]+$/ || resourceExtname == .jsx || resourceExtname == .js || resourceExtname == .tsx || resourceExtname == .ts"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "React Rename",
+      "properties": {
+        "react-rename.classNaming": {
+          "description": "Naming strategy used for class names in JSX and stylesheets, like pascal case or camel case",
+          "default": "kebab",
+          "enum": [
+            "kebab",
+            "pascal",
+            "camel",
+            "snake"
+          ],
+          "type": "string"
+        }
+      }
+    }
+  }
+}

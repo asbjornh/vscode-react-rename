@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "rootDir": "source",
+    "outDir": "dist",
+    "module": "commonjs",
+    "target": "es6",
+    "lib": ["es2019", "dom"],
+    "inlineSourceMap": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true
+  },
+  "exclude": ["node_modules"]
+}
